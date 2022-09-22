@@ -16,10 +16,12 @@ import verifyTypeFieldsUserMiddleware from "../middlewares/user/verifyTypeFields
 import verifyIdContactMiddleware from "../middlewares/contact/verifyIdContact.middleware";
 import contactDeleteController from "../controllers/contact/contactDelete.controller";
 import contactCaptureController from "../controllers/contact/contactCapture.controller";
+import userCaptureController from "../controllers/user/userCapture.controller";
 
 const router = Router();
 // ROTAS DOS USUARIOS 
 router.get("/users", usersListController)
+router.get("/users/:id", verifyTokenMiddleware, userCaptureController)
 router.post("/users", verifyTypeFieldsUserMiddleware, userCreateController)
 router.post("/users/login", userLoginController)
 router.delete("/users/:id", verifyTokenMiddleware, verifyIdUserMiddleware, userDeleteController)

@@ -18,7 +18,7 @@ const userCaptureService = async (id: string, idToken: string) => {
         throw new AppError(403, "you do not have permission")
     }
 
-    return user
+    return {...user, password: undefined}
 }
 
 export default userCaptureService
