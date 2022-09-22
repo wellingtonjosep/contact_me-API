@@ -16,7 +16,7 @@ Essa aplicação utiliza JSON Web Token (JWT) para lidar com a autenticação. O
     GET /users/animals/:id
     PATCH /users/:id
     DELETE /users/:id
-### Todas as rotas dos animais:
+### Todas as rotas dos contatos:
     POST /animals
     PATCH /animals/:id
     DELETE /animals/:id
