@@ -15,6 +15,7 @@ import verifyTokenMiddleware from "../middlewares/user/verifyToken.middleware";
 import verifyTypeFieldsUserMiddleware from "../middlewares/user/verifyTypeFieldsUser.middleware";
 import verifyIdContactMiddleware from "../middlewares/contact/verifyIdContact.middleware";
 import contactDeleteController from "../controllers/contact/contactDelete.controller";
+import contactCaptureController from "../controllers/contact/contactCapture.controller";
 
 const router = Router();
 // ROTAS DOS USUARIOS 
@@ -26,7 +27,7 @@ router.patch("/users/:id", verifyTokenMiddleware, verifyIdUserMiddleware, userUp
 
 // ROTAS DOS CONTATOS
 router.get("/contacts", contactsListController)
-router.get("/contacts/:contact_id", verifyTokenMiddleware, )
+router.get("/contacts/:contact_id", verifyTokenMiddleware, contactCaptureController)
 router.post("/contacts", verifyTokenMiddleware, contactCreateController)
 router.patch("/contacts/:contact_id", verifyTokenMiddleware, verifyIdContactMiddleware, contactUpdateController)
 router.delete("/contacts/:contact_id", verifyTokenMiddleware, verifyIdContactMiddleware, contactDeleteController)
