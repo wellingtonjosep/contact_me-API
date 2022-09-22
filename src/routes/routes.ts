@@ -26,6 +26,7 @@ router.patch("/users/:id", verifyTokenMiddleware, verifyIdUserMiddleware, userUp
 
 // ROTAS DOS CONTATOS
 router.get("/contacts", contactsListController)
+router.get("/contacts/:contact_id", verifyTokenMiddleware, )
 router.post("/contacts", verifyTokenMiddleware, contactCreateController)
 router.patch("/contacts/:contact_id", verifyTokenMiddleware, verifyIdContactMiddleware, contactUpdateController)
 router.delete("/contacts/:contact_id", verifyTokenMiddleware, verifyIdContactMiddleware, contactDeleteController)
