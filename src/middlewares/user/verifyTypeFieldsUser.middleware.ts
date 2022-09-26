@@ -18,7 +18,7 @@ const verifyTypeFieldsUserMiddleware = async (
     errors.email = "Required field";
   }
 
-  if (typeof phone != "number" || !phone) {
+  if (typeof phone != "string" || !phone) {
     errors.phone = "Required field";
   }
 

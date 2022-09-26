@@ -5,6 +5,7 @@ import bcrypt from "bcryptjs"
 
 
 const userUpdateService = async ({id, name, email, password, phone}: IUserUpdate) => {
+
     const user = await prisma.user.findUnique({
         where: {
             id: id

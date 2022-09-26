@@ -18,11 +18,11 @@ const userLoginService = async ({ email, password }: IUserLogin) => {
     throw new AppError(401, "Wrong email/password");
   }
 
-  const token = jwt.sign({ id: user.id }, String(process.env.SECRET_KEY), {
+  const token = jwt.sign({ id: user.id }, String(process.env.JWT_SECRET), {
     expiresIn: "1d",
   });
 
-  return token;
+  return {token:token, userId: user.id};
 };
 
 export default userLoginService;

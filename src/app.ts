@@ -1,9 +1,11 @@
 import express, { NextFunction, Request, Response } from "express";
 import { AppError } from "./errors/appError";
-
 import router from "./routes/routes";
+import cors from "cors"
 
 const app = express();
+
+app.use(cors())
 
 app.use(express.json());
 
@@ -23,7 +25,7 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   });
 });
 
-app.listen(4000);
-console.log("Servidor online")
+app.listen(process.env.PORT || 4000);
+console.log("Online")
 
 export default app;

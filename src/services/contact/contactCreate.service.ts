@@ -5,6 +5,18 @@ import { IContact } from "../../interfaces/contact"
 
 const contactCreateService = async ({id,name, email, phone}: IContact) => {
     
+    if (typeof name != "string" || !name) {
+        throw new AppError(403,"Error type name")
+    }
+
+    if (typeof email != "string" || !email) {
+        throw new AppError(403,"Error type email")
+    }
+
+    if (typeof phone != "string" || !phone) {
+        throw new AppError(403,"Error type phone")
+    }
+
     const user = await prisma.user.findUnique({
         where: {
             id: id

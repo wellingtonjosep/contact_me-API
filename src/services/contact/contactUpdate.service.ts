@@ -4,6 +4,18 @@ import { IContactUpdate } from "../../interfaces/contact"
 
 
 const contactUpdateService = async ({name, phone, email, id}: IContactUpdate) => {
+    
+    if (typeof name != "string") {
+        throw new AppError(403,"Error type name")
+    }
+
+    if (typeof email != "string") {
+        throw new AppError(403,"Error type email")
+    }
+
+    if (typeof phone != "string") {
+        throw new AppError(403,"Error type phone")
+    }
 
     const oldContact = await prisma.contact.findUnique({
         where: {
