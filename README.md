@@ -21,3 +21,4 @@ Essa aplicação utiliza JSON Web Token (JWT) para lidar com a autenticação. O
     DELETE /contacts/:contact_id
     GET /contacts/:contact_id
     GET /contacts/user
+
