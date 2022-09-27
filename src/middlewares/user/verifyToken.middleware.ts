@@ -17,7 +17,7 @@ const verifyTokenMiddleware = (
       }
     );
   } catch (err) {
-    return res.status(401).json({ message: "Invalid Tokenn" });
+    return res.status(401).json({ message: "Invalid Token" });
   }
 };
 
